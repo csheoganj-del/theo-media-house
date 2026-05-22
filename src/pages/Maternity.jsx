@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Camera, Sparkles, CheckCircle } from 'lucide-react';
 import gsap from 'gsap';
+import LensFocusImage from '../components/LensFocusImage';
 
 export default function Maternity() {
   useEffect(() => {
@@ -18,12 +19,23 @@ export default function Maternity() {
         height: '75vh', 
         display: 'flex', 
         alignItems: 'center', 
-        backgroundImage: 'linear-gradient(to bottom, rgba(10, 10, 10, 0.7), rgba(10, 10, 10, 0.95)), url("/images/maternity_hero_bg.png")',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
         color: 'var(--text-light)',
-        paddingTop: '80px'
+        paddingTop: '80px',
+        overflow: 'hidden'
       }}>
+        {/* Cinematic Lens Focus Background */}
+        <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, zIndex: 1 }}>
+          <LensFocusImage src="/images/maternity_hero_bg.png" alt="Maternity Hero Background" />
+          <div style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            background: 'linear-gradient(to bottom, rgba(10, 10, 10, 0.7), rgba(10, 10, 10, 0.95))'
+          }} />
+        </div>
+
         {/* Soft gold/cream glow overlay */}
         <div style={{
           position: 'absolute',
@@ -32,10 +44,11 @@ export default function Maternity() {
           right: 0,
           bottom: 0,
           background: 'radial-gradient(circle at 75% 50%, rgba(201, 168, 76, 0.05) 0%, transparent 60%)',
-          pointerEvents: 'none'
+          pointerEvents: 'none',
+          zIndex: 2
         }} />
 
-        <div className="container">
+        <div className="container" style={{ zIndex: 2 }}>
           <span className="section-tagline maternity-fade-in">EDITORIAL MATERNITY PORTRAITS</span>
           
           <h1 className="maternity-fade-in" style={{ 

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Camera, Film, Compass, ChevronDown, Check, Heart, Shield, Award } from 'lucide-react';
 import gsap from 'gsap';
+import LensFocusImage from '../components/LensFocusImage';
 
 export default function Home() {
   const [activeFaq, setActiveFaq] = useState(null);
@@ -76,13 +77,24 @@ export default function Home() {
         display: 'flex', 
         alignItems: 'center', 
         justifyContent: 'center',
-        backgroundImage: 'linear-gradient(to bottom, rgba(10, 10, 10, 0.75), rgba(10, 10, 10, 0.95)), url("/images/home_hero_bg.png")',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
         color: 'var(--text-light)',
         textAlign: 'center',
-        paddingTop: '80px'
+        paddingTop: '80px',
+        overflow: 'hidden'
       }}>
+        {/* Cinematic Lens Focus Background */}
+        <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, zIndex: 1 }}>
+          <LensFocusImage src="/images/home_hero_bg.png" alt="Theo Media House Hero Background" />
+          <div style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            background: 'linear-gradient(to bottom, rgba(10, 10, 10, 0.75), rgba(10, 10, 10, 0.95))'
+          }} />
+        </div>
+
         {/* Abstract luxury ambient overlay */}
         <div style={{
           position: 'absolute',
@@ -91,7 +103,8 @@ export default function Home() {
           right: 0,
           bottom: 0,
           background: 'radial-gradient(circle at 70% 30%, rgba(201, 168, 76, 0.05) 0%, transparent 60%)',
-          pointerEvents: 'none'
+          pointerEvents: 'none',
+          zIndex: 2
         }} />
 
         <div className="container" style={{ zIndex: 2 }}>

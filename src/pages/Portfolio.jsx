@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Camera, Film, Compass, Heart } from 'lucide-react';
 import gsap from 'gsap';
+import LensFocusImage from '../components/LensFocusImage';
 
 export default function Portfolio() {
   const [filter, setFilter] = useState('all');
@@ -216,15 +217,10 @@ export default function Portfolio() {
               }}
             >
               {/* Luxury Rendered Image */}
-              <img 
+              <LensFocusImage 
                 src={item.image} 
                 alt={item.title} 
                 loading="lazy"
-                style={{
-                  width: '100%',
-                  height: '100%',
-                  objectFit: 'cover'
-                }}
               />
 
               {/* Styled details overlay */}

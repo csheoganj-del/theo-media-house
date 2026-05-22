@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Compass, Users, Video, Calendar } from 'lucide-react';
 import gsap from 'gsap';
+import LensFocusImage from '../components/LensFocusImage';
 
 export default function About() {
   useEffect(() => {
@@ -19,12 +20,23 @@ export default function About() {
         height: '75vh', 
         display: 'flex', 
         alignItems: 'center', 
-        backgroundImage: 'linear-gradient(to bottom, rgba(10, 10, 10, 0.75), rgba(10, 10, 10, 0.98)), url("/images/about_hero_bg.png")',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
         color: 'var(--text-light)',
-        paddingTop: '80px'
+        paddingTop: '80px',
+        overflow: 'hidden'
       }}>
+        {/* Cinematic Lens Focus Background */}
+        <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, zIndex: 1 }}>
+          <LensFocusImage src="/images/about_hero_bg.png" alt="About Us Hero Background" />
+          <div style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            background: 'linear-gradient(to bottom, rgba(10, 10, 10, 0.75), rgba(10, 10, 10, 0.98))'
+          }} />
+        </div>
+
         {/* Fine gold ambient glow */}
         <div style={{
           position: 'absolute',
@@ -33,10 +45,11 @@ export default function About() {
           right: 0,
           bottom: 0,
           background: 'radial-gradient(circle at 80% 50%, rgba(201, 168, 76, 0.05) 0%, transparent 60%)',
-          pointerEvents: 'none'
+          pointerEvents: 'none',
+          zIndex: 2
         }} />
 
-        <div className="container">
+        <div className="container" style={{ zIndex: 2 }}>
           <span className="section-tagline about-fade-in">ABOUT OUR ETHOS</span>
           
           <h1 className="about-fade-in" style={{ 

@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Film, Award, Map, Sparkles, Compass, CheckCircle } from 'lucide-react';
 import gsap from 'gsap';
+import LensFocusImage from '../components/LensFocusImage';
 
 export default function Weddings() {
   useEffect(() => {
@@ -18,12 +19,23 @@ export default function Weddings() {
         height: '75vh', 
         display: 'flex', 
         alignItems: 'center', 
-        backgroundImage: 'linear-gradient(to bottom, rgba(10, 10, 10, 0.7), rgba(10, 10, 10, 0.95)), url("/images/wedding_hero_bg.png")',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
         color: 'var(--text-light)',
-        paddingTop: '80px'
+        paddingTop: '80px',
+        overflow: 'hidden'
       }}>
+        {/* Cinematic Lens Focus Background */}
+        <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, zIndex: 1 }}>
+          <LensFocusImage src="/images/wedding_hero_bg.png" alt="Weddings Hero Background" />
+          <div style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            background: 'linear-gradient(to bottom, rgba(10, 10, 10, 0.7), rgba(10, 10, 10, 0.95))'
+          }} />
+        </div>
+
         {/* Fine gold light glow */}
         <div style={{
           position: 'absolute',
@@ -32,10 +44,11 @@ export default function Weddings() {
           right: 0,
           bottom: 0,
           background: 'radial-gradient(circle at 80% 50%, rgba(201, 168, 76, 0.06) 0%, transparent 60%)',
-          pointerEvents: 'none'
+          pointerEvents: 'none',
+          zIndex: 2
         }} />
 
-        <div className="container">
+        <div className="container" style={{ zIndex: 2 }}>
           <span className="section-tagline wedding-fade-in">CINEMATIC WEDDING FILMS</span>
           
           <h1 className="wedding-fade-in" style={{ 

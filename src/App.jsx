@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import SmoothScroll from './components/SmoothScroll';
-import ViewfinderFocus from './components/ViewfinderFocus';
+import PageTransitionManager from './components/PageTransitionManager';
 import Home from './pages/Home';
 import Weddings from './pages/Weddings';
 import Maternity from './pages/Maternity';
@@ -19,7 +19,7 @@ function App() {
     <Router>
       <SmoothScroll>
         <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
-          <ViewfinderFocus />
+          <PageTransitionManager />
           <Navbar />
           
           <main style={{ flexGrow: 1 }}>
