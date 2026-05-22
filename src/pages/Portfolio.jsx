@@ -58,6 +58,79 @@ export default function Portfolio() {
 
   const filteredItems = filter === 'all' ? items : items.filter(item => item.category === filter);
 
+  const handleMouseMove = (e) => {
+    const card = e.currentTarget;
+    const rect = card.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width - 0.5;
+    const y = (e.clientY - rect.top) / rect.height - 0.5;
+    
+    // Physics 3D tilt
+    gsap.to(card, {
+      rotateY: x * 12,
+      rotateX: -y * 12,
+      transformPerspective: 1000,
+      ease: 'power3.out',
+      duration: 0.5
+    });
+    
+    // Shift image in opposite direction for parallax depth
+    const img = card.querySelector('img');
+    if (img) {
+      gsap.to(img, {
+        x: -x * 18,
+        y: -y * 18,
+        scale: 1.1,
+        ease: 'power3.out',
+        duration: 0.5
+      });
+    }
+
+    // Floating text overlay depth offset
+    const overlay = card.querySelector('.portfolio-overlay');
+    if (overlay) {
+      gsap.to(overlay, {
+        x: x * 8,
+        y: y * 8,
+        ease: 'power3.out',
+        duration: 0.5
+      });
+    }
+  };
+
+  const handleMouseLeave = (e) => {
+    const card = e.currentTarget;
+    
+    // Snap back with spring elastic physics!
+    gsap.to(card, {
+      rotateY: 0,
+      rotateX: 0,
+      transformPerspective: 1000,
+      ease: 'elastic.out(1.2, 0.4)',
+      duration: 0.9
+    });
+    
+    const img = card.querySelector('img');
+    if (img) {
+      gsap.to(img, {
+        x: 0,
+        y: 0,
+        scale: 1,
+        ease: 'elastic.out(1.2, 0.4)',
+        duration: 0.9
+      });
+    }
+
+    const overlay = card.querySelector('.portfolio-overlay');
+    if (overlay) {
+      gsap.to(overlay, {
+        x: 0,
+        y: 0,
+        ease: 'elastic.out(1.2, 0.4)',
+        duration: 0.9
+      });
+    }
+  };
+
   useEffect(() => {
     // Trigger GSAP fade-in grid animation on filter change
     gsap.fromTo('.portfolio-card-anim', 
@@ -133,10 +206,13 @@ export default function Portfolio() {
             <div 
               key={item.id} 
               className="portfolio-item portfolio-card-anim"
+              onMouseMove={handleMouseMove}
+              onMouseLeave={handleMouseLeave}
               style={{
                 background: 'var(--bg-card-dark)',
                 position: 'relative',
-                overflow: 'hidden'
+                overflow: 'hidden',
+                transformStyle: 'preserve-3d'
               }}
             >
               {/* Luxury Rendered Image */}
@@ -152,7 +228,7 @@ export default function Portfolio() {
               />
 
               {/* Styled details overlay */}
-              <div className="portfolio-overlay">
+              <div className="portfolio-overlay" style={{ transformStyle: 'preserve-3d' }}>
                 <span className="portfolio-category">{item.categoryLabel}</span>
                 <h3 className="portfolio-title">{item.title}</h3>
                 <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginTop: '0.3rem' }}>{item.location}</span>
