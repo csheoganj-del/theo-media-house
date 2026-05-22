@@ -430,6 +430,45 @@ img, video {
   border-color: rgba(201, 168, 76, 0.3);
 }
 
+.pricing-card-glass {
+  background-color: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: var(--border-radius);
+  padding: 3rem 2.5rem;
+  transition: var(--transition-smooth);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  color: var(--text-light);
+}
+
+.pricing-card-glass:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.12);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.4);
+}
+
+.pricing-card-glass-featured {
+  background-color: rgba(201, 168, 76, 0.04);
+  border: 1px solid var(--accent-gold);
+  border-radius: var(--border-radius);
+  padding: 3rem 2.5rem;
+  transition: var(--transition-smooth);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  color: var(--text-light);
+  box-shadow: 0 10px 30px rgba(201, 168, 76, 0.1);
+}
+
+.pricing-card-glass-featured:hover {
+  background-color: rgba(201, 168, 76, 0.07);
+  border-color: var(--accent-gold-hover);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 50px rgba(201, 168, 76, 0.25);
+}
+
 .pricing-badge {
   position: absolute;
   top: 1.5rem;

@@ -70,14 +70,15 @@ export default function Home() {
 
   return (
     <div>
-      {/* Premium Hero Section */}
       <section style={{ 
         position: 'relative', 
         height: '100vh', 
         display: 'flex', 
         alignItems: 'center', 
         justifyContent: 'center',
-        background: 'linear-gradient(135deg, #0d0d0d 0%, #151515 50%, #000000 100%)',
+        backgroundImage: 'linear-gradient(to bottom, rgba(10, 10, 10, 0.75), rgba(10, 10, 10, 0.95)), url("/images/home_hero_bg.png")',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
         color: 'var(--text-light)',
         textAlign: 'center',
         paddingTop: '80px'
@@ -89,7 +90,7 @@ export default function Home() {
           left: 0,
           right: 0,
           bottom: 0,
-          background: 'radial-gradient(circle at 70% 30%, rgba(201, 168, 76, 0.08) 0%, transparent 60%)',
+          background: 'radial-gradient(circle at 70% 30%, rgba(201, 168, 76, 0.05) 0%, transparent 60%)',
           pointerEvents: 'none'
         }} />
 

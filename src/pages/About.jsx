@@ -19,7 +19,9 @@ export default function About() {
         height: '75vh', 
         display: 'flex', 
         alignItems: 'center', 
-        background: 'linear-gradient(135deg, #101010 0%, #1c1810 100%)',
+        backgroundImage: 'linear-gradient(to bottom, rgba(10, 10, 10, 0.75), rgba(10, 10, 10, 0.98)), url("/images/about_hero_bg.png")',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
         color: 'var(--text-light)',
         paddingTop: '80px'
       }}>

@@ -13,13 +13,14 @@ export default function Maternity() {
 
   return (
     <div>
-      {/* Editorial Hero Section */}
       <section style={{ 
         position: 'relative', 
         height: '75vh', 
         display: 'flex', 
         alignItems: 'center', 
-        background: 'linear-gradient(135deg, #121212 0%, #1e1b15 100%)',
+        backgroundImage: 'linear-gradient(to bottom, rgba(10, 10, 10, 0.7), rgba(10, 10, 10, 0.95)), url("/images/maternity_hero_bg.png")',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
         color: 'var(--text-light)',
         paddingTop: '80px'
       }}>

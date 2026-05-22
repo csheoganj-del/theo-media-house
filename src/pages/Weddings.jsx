@@ -13,13 +13,14 @@ export default function Weddings() {
 
   return (
     <div>
-      {/* Editorial Page Hero */}
       <section style={{ 
         position: 'relative', 
         height: '75vh', 
         display: 'flex', 
         alignItems: 'center', 
-        background: 'linear-gradient(135deg, #101010 0%, #1a1a1a 100%)',
+        backgroundImage: 'linear-gradient(to bottom, rgba(10, 10, 10, 0.7), rgba(10, 10, 10, 0.95)), url("/images/wedding_hero_bg.png")',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
         color: 'var(--text-light)',
         paddingTop: '80px'
       }}>
