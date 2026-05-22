@@ -19,23 +19,22 @@ function App() {
     <Router>
       <SmoothScroll>
         <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+          <PageTransitionManager />
           <Navbar />
           
           <main style={{ flexGrow: 1 }}>
-            <PageTransitionManager>
-              <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/weddings" element={<Weddings />} />
-                <Route path="/maternity" element={<Maternity />} />
-                <Route path="/hotels" element={<Hotels />} />
-                <Route path="/portfolio" element={<Portfolio />} />
-                <Route path="/packages" element={<Packages />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/contact" element={<Contact />} />
-                {/* Fallback to home */}
-                <Route path="*" element={<Home />} />
-              </Routes>
-            </PageTransitionManager>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/weddings" element={<Weddings />} />
+              <Route path="/maternity" element={<Maternity />} />
+              <Route path="/hotels" element={<Hotels />} />
+              <Route path="/portfolio" element={<Portfolio />} />
+              <Route path="/packages" element={<Packages />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/contact" element={<Contact />} />
+              {/* Fallback to home */}
+              <Route path="*" element={<Home />} />
+            </Routes>
           </main>
 
           <Footer />
