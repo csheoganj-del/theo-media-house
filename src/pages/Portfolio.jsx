@@ -11,42 +11,48 @@ export default function Portfolio() {
       title: "Autumn Collection",
       category: "weddings",
       categoryLabel: "Wedding Film & Photo",
-      location: "Adare Manor, Ireland"
+      location: "Adare Manor, Ireland",
+      image: "/images/wedding_adare_manor.png"
     },
     {
       id: 2,
       title: "The Light Within",
       category: "maternity",
       categoryLabel: "Editorial Silhouette",
-      location: "Dublin Studio, Ireland"
+      location: "Dublin Studio, Ireland",
+      image: "/images/maternity_silhouette_light.png"
     },
     {
       id: 3,
       title: "Cliff House Hotel",
       category: "hotels",
       categoryLabel: "Hospitality Campaign",
-      location: "Ardmore, Ireland"
+      location: "Ardmore, Ireland",
+      image: "/images/cliff_house_hotel.png"
     },
     {
       id: 4,
       title: "Cliffs of Moher",
       category: "weddings",
       categoryLabel: "Cinematic Elopement",
-      location: "County Clare, Ireland"
+      location: "County Clare, Ireland",
+      image: "/images/cliffs_of_moher_wedding.png"
     },
     {
       id: 5,
       title: "The Heritage Resort",
       category: "hotels",
       categoryLabel: "Resort & Spa Campaign",
-      location: "Rajasthan, India"
+      location: "Rajasthan, India",
+      image: "/images/heritage_resort_india.png"
     },
     {
       id: 6,
       title: "Serene Transformations",
       category: "maternity",
       categoryLabel: "Fine-Art Silhouette",
-      location: "Studio Session, India"
+      location: "Studio Session, India",
+      image: "/images/maternity_silhouette_dark.png"
     }
   ];
 
@@ -128,19 +134,22 @@ export default function Portfolio() {
               key={item.id} 
               className="portfolio-item portfolio-card-anim"
               style={{
-                // Custom solid aesthetic backgrounds for visual placeholder effect
-                background: 'linear-gradient(135deg, #181818 0%, #252525 100%)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center'
+                background: 'var(--bg-card-dark)',
+                position: 'relative',
+                overflow: 'hidden'
               }}
             >
-              {/* Fallback graphic/icon when no image is uploaded */}
-              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem', color: 'rgba(255,255,255,0.05)', transition: 'color 0.4s' }} className="item-icon-hover">
-                {item.category === 'weddings' && <Film size={60} />}
-                {item.category === 'maternity' && <Camera size={60} />}
-                {item.category === 'hotels' && <Compass size={60} />}
-              </div>
+              {/* Luxury Rendered Image */}
+              <img 
+                src={item.image} 
+                alt={item.title} 
+                loading="lazy"
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover'
+                }}
+              />
 
               {/* Styled details overlay */}
               <div className="portfolio-overlay">
