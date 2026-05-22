@@ -1,149 +1,93 @@
-import React, { useEffect, useRef } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
-import gsap from 'gsap';
+import React, { useState, useEffect, useRef } from 'react';
+import { useLocation } from 'react-router-dom';
+import { gsap } from 'gsap';
 
-export default function PageTransitionManager() {
-  const navigate = useNavigate();
+export default function PageTransitionManager({ children }) {
   const location = useLocation();
-  const flashRef = useRef(null);
+  const [displayLocation, setDisplayLocation] = useState(location);
+  const [isTransitioning, setIsTransitioning] = useState(false);
+  const svgPathRef = useRef(null);
+  const prevPathname = useRef(location.pathname);
 
   useEffect(() => {
-    const handleLinkClick = (e) => {
-      const anchor = e.target.closest('a');
-      if (!anchor) return;
+    if (location.pathname !== prevPathname.current) {
+      prevPathname.current = location.pathname;
+      setIsTransitioning(true);
 
-      // Ignore modifications
-      if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+      // Create falling curtain morph timeline
+      const tl = gsap.timeline({
+        onComplete: () => {
+          // Swap route content underneath the closed curtain
+          setDisplayLocation(location);
+          
+          // Scroll page to top to ensure clean page layout on mount
+          window.scrollTo(0, 0);
 
-      const href = anchor.getAttribute('href');
-      if (!href) return;
+          // Create lifting curtain morph timeline
+          const tlOut = gsap.timeline({
+            onComplete: () => {
+              setIsTransitioning(false);
+            }
+          });
 
-      // Check if external or blank
-      if (href.startsWith('http') && !href.startsWith(window.location.origin)) return;
-      if (href.startsWith('#')) return;
-      if (href.startsWith('mailto:') || href.startsWith('tel:')) return;
-      if (anchor.getAttribute('target') === '_blank') return;
-      if (anchor.hasAttribute('download')) return;
+          // Morph: Pull up from the center (forming an upward arch)
+          tlOut.to(svgPathRef.current, {
+            attr: { d: "M 0,0 L 100,0 L 100,80 Q 50,30 0,80 Z" },
+            duration: 0.45,
+            ease: "power2.out"
+          })
+          // Morph: Flatten out at the very top (completely retracted)
+          .to(svgPathRef.current, {
+            attr: { d: "M 0,0 L 100,0 L 100,0 Q 50,0 0,0 Z" },
+            duration: 0.35,
+            ease: "power2.inOut"
+          });
+        }
+      });
 
-      const targetPath = anchor.pathname;
-      
-      // If it's the same path, scroll to top smoothly
-      if (targetPath === window.location.pathname) {
-        e.preventDefault();
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-        return;
-      }
+      // Morph: Droop down in the center (organic fabric weight fall)
+      tl.to(svgPathRef.current, {
+        attr: { d: "M 0,0 L 100,0 L 100,80 Q 50,120 0,80 Z" },
+        duration: 0.5,
+        ease: "power2.in"
+      })
+      // Morph: Sides catch up to fully cover screen flat
+      .to(svgPathRef.current, {
+        attr: { d: "M 0,0 L 100,0 L 100,100 Q 50,100 0,100 Z" },
+        duration: 0.25,
+        ease: "power1.out"
+      });
+    }
+  }, [location]);
 
-      e.preventDefault();
-
-      // Trigger the Shutter Flash Transition
-      playShutterTransition(targetPath);
-    };
-
-    document.addEventListener('click', handleLinkClick);
-    return () => document.removeEventListener('click', handleLinkClick);
-  }, [location.pathname]);
-
-  const playShutterTransition = (targetPath) => {
-    const flash = flashRef.current;
-    if (!flash) return;
-
-    // Timeline for the shutter exposure flash
-    const tl = gsap.timeline({
-      onComplete: () => {
-        window.scrollTo(0, 0);
-      }
-    });
-
-    // 1. Shutter Flash In (Warm gold & white exposure overlay)
-    tl.to(flash, {
-      opacity: 0.95,
-      duration: 0.22,
-      ease: 'power2.inOut',
-      onComplete: () => {
-        // Change route at the peak of the exposure flash
-        navigate(targetPath);
-      }
-    });
-
-    // 2. Shutter Flash Out
-    tl.to(flash, {
-      opacity: 0,
-      duration: 0.35,
-      ease: 'power2.out'
-    });
-  };
-
-  useEffect(() => {
-    // Reset scroll just in case
-    window.scrollTo(0, 0);
-
-    const mainContent = document.querySelector('main');
-    if (!mainContent) return;
-
-    // Kill any active content animation
-    gsap.killTweensOf(mainContent);
-
-    // Inertial slide-up and fade-in for the main content
-    gsap.fromTo(mainContent, 
-      { 
-        y: 40, 
-        opacity: 0 
-      }, 
-      { 
-        y: 0, 
-        opacity: 1, 
-        duration: 0.8, 
-        ease: 'power3.out',
-        clearProps: 'transform' // clean up GSAP styles after animation
-      }
-    );
-
-    // Stagger all page entrance elements on the new page
-    const pageFadeClasses = [
-      '.hero-title-line', '.hero-fade-in',
-      '.wedding-fade-in', '.maternity-fade-in',
-      '.hotels-fade-in', '.packages-fade-in',
-      '.about-fade-in', '.contact-fade-in'
-    ];
-
-    pageFadeClasses.forEach((cls) => {
-      const elements = document.querySelectorAll(cls);
-      if (elements.length > 0) {
-        gsap.killTweensOf(elements);
-        gsap.fromTo(elements,
-          { opacity: 0, y: 30 },
-          { 
-            opacity: 1, 
-            y: 0, 
-            duration: 0.9, 
-            stagger: 0.08, 
-            ease: 'power3.out',
-            delay: 0.12 // slight delay so it starts revealing as the flash dissolves
-          }
-        );
-      }
-    });
-
-  }, [location.pathname]);
+  // Map over children (typically <Routes>) and inject the displayLocation
+  const childrenWithLocation = React.Children.map(children, child => {
+    if (React.isValidElement(child)) {
+      return React.cloneElement(child, { location: displayLocation });
+    }
+    return child;
+  });
 
   return (
-    <div 
-      ref={flashRef}
-      className="shutter-flash-overlay"
-      style={{
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        width: '100vw',
-        height: '100vh',
-        background: 'radial-gradient(circle, rgba(255, 255, 255, 0.98) 0%, rgba(245, 215, 130, 0.95) 60%, rgba(201, 168, 76, 0.98) 100%)',
-        zIndex: 99999,
-        pointerEvents: 'none',
-        opacity: 0,
-        mixBlendMode: 'screen', // luxury screen blending
-        willChange: 'opacity'
-      }}
-    />
+    <>
+      <div className={`curtain-overlay-container ${isTransitioning ? 'active' : ''}`}>
+        <svg className="curtain-svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="curtain-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#1c1c1c" />
+              <stop offset="40%" stopColor="#0d0d0d" />
+              <stop offset="100%" stopColor="#050505" />
+            </linearGradient>
+          </defs>
+          <path 
+            ref={svgPathRef} 
+            className="curtain-path" 
+            fill="url(#curtain-grad)" 
+            d="M 0,0 L 100,0 L 100,0 Q 50,0 0,0 Z" 
+          />
+        </svg>
+      </div>
+      {childrenWithLocation}
+    </>
   );
 }
