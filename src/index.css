@@ -58,8 +58,8 @@ html.lenis, html.lenis body {
 }
 
 body {
-  background-color: var(--bg-white);
-  color: var(--text-dark);
+  background-color: var(--bg-dark);
+  color: var(--text-light);
   font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

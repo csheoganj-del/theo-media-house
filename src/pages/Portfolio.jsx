@@ -20,7 +20,7 @@ export default function Portfolio() {
       category: "weddings",
       categoryLabel: "Wedding Film & Photo",
       location: "Adare Manor, Ireland",
-      image: "/images/wedding_adare_manor.png",
+      image: "/images/packages_weddings.png",
       videoUrl: "https://assets.mixkit.co/videos/preview/mixkit-cinematic-shot-of-a-couple-hugging-in-nature-41584-large.mp4",
       brief: "To capture the multi-day wedding celebrations of a couple under rain-heavy Irish skies, utilizing the historic stone archways of Adare Manor.",
       solution: "We deployed dual camera units equipped with anamorphic lenses and custom-calibrated warm lighting kits to combat overcast skies. High-altitude drone trajectories captured dramatic sweeps of the manor house between showers, rendering a truly epic editorial aesthetic.",
@@ -31,7 +31,7 @@ export default function Portfolio() {
         { label: "Keepsake Format", value: "Video Book" }
       ],
       deliverables: ["8-Min Cinematic Feature Film", "60-Second Instagram Trailer", "Private High-Res Digital Gallery", "Physical Leather Video Book"],
-      gallery: ["/images/wedding_adare_manor.png", "/images/cliffs_of_moher_wedding.png", "/images/wedding_hero_bg.png"]
+      gallery: ["/images/packages_weddings.png", "/images/packages_wedding_detail.png", "/images/packages_memorable_bg.png"]
     },
     {
       id: 2,
@@ -39,7 +39,7 @@ export default function Portfolio() {
       category: "maternity",
       categoryLabel: "Editorial Silhouette",
       location: "Dublin Studio, Ireland",
-      image: "/images/maternity_silhouette_light.png",
+      image: "/images/packages_intimate.png",
       videoUrl: "https://assets.mixkit.co/videos/preview/mixkit-mother-holding-her-pregnant-belly-in-a-field-44654-large.mp4",
       brief: "An intimate maternity silhouette campaign celebrating body transformation using classical high-contrast studio setups.",
       solution: "Using single-source backlighting and custom silk drapery, we focused purely on form, light, and motion. Shadows were hand-tuned in-camera to ensure zero distortion and maximum focus on silhouette details.",
@@ -50,7 +50,7 @@ export default function Portfolio() {
         { label: "Prints Supplied", value: "10 Museum" }
       ],
       deliverables: ["2-Hour Silhouette Session", "45 Fine-Art Silhouette Stills", "10 High-Texture Printed Frames", "Custom Digital Archive Portfolio"],
-      gallery: ["/images/maternity_silhouette_light.png", "/images/maternity_silhouette_dark.png", "/images/maternity_hero_bg.png"]
+      gallery: ["/images/packages_intimate.png", "/images/packages_hero.png", "/images/packages_memorable_bg.png"]
     },
     {
       id: 3,
@@ -58,7 +58,7 @@ export default function Portfolio() {
       category: "hotels",
       categoryLabel: "Hospitality Campaign",
       location: "Ardmore, Ireland",
-      image: "/images/cliff_house_hotel.png",
+      image: "/images/packages_hero.png",
       videoUrl: "https://assets.mixkit.co/videos/preview/mixkit-luxury-resort-with-swimming-pools-in-bali-41525-large.mp4",
       brief: "Re-scaffold the visual identity of a five-star seaside luxury hotel built directly into Cliffside rocks.",
       solution: "We filmed across three days, matching drone flights with Ardmore tide patterns. Dynamic, stabilized resort interior clips were captured alongside slow-paced dining, spa transitions, and outdoor infinity pool sweeps optimized for direct booking conversions.",
@@ -69,7 +69,7 @@ export default function Portfolio() {
         { label: "Turnaround", value: "2 Weeks" }
       ],
       deliverables: ["Complete Resort Stills Library", "4 High-Impact Social Reels", "3-Minute Master Suite Film", "Unlimited Digital Usage Licensing"],
-      gallery: ["/images/cliff_house_hotel.png", "/images/hotel_hero_bg.png", "/images/about_hero_bg.png"]
+      gallery: ["/images/packages_hero.png", "/images/packages_adventure.png", "/images/packages_memorable_bg.png"]
     },
     {
       id: 4,
@@ -77,7 +77,7 @@ export default function Portfolio() {
       category: "weddings",
       categoryLabel: "Cinematic Elopement",
       location: "County Clare, Ireland",
-      image: "/images/cliffs_of_moher_wedding.png",
+      image: "/images/packages_elopements.png",
       videoUrl: "https://assets.mixkit.co/videos/preview/mixkit-bridegroom-couple-dancing-in-nature-41589-large.mp4",
       brief: "An elopement shoot directly on the wild wind-lashed cliffs of Moher, Ireland, under intense gusts.",
       solution: "To achieve stable, highly cinematic framing under 40km/h cliffside winds, we utilized advanced mechanical stabilizing rigs and compact wireless audio receivers hidden inside collars. The editing combined dark color-grading with classical ambient violin tracks.",
@@ -88,7 +88,7 @@ export default function Portfolio() {
         { label: "Photo Files", value: "250 High-Res" }
       ],
       deliverables: ["3-Minute Cinematic Highlight", "250+ Color-Graded Stills", "Aerial Venues B-Roll Clips", "Secure Web Delivery Link"],
-      gallery: ["/images/cliffs_of_moher_wedding.png", "/images/wedding_hero_bg.png", "/images/wedding_adare_manor.png"]
+      gallery: ["/images/packages_elopements.png", "/images/packages_wedding_detail.png", "/images/packages_memorable_bg.png"]
     },
     {
       id: 5,
@@ -96,7 +96,7 @@ export default function Portfolio() {
       category: "hotels",
       categoryLabel: "Resort & Spa Campaign",
       location: "Rajasthan, India",
-      image: "/images/heritage_resort_india.png",
+      image: "/images/packages_adventure.png",
       videoUrl: "https://assets.mixkit.co/videos/preview/mixkit-drone-shot-of-a-resort-surrounded-by-nature-41908-large.mp4",
       brief: "Rebrand a magnificent 18th-century fort palace converted into a luxury resort in desert lands.",
       solution: "Over five days, our Indian crew captured sunrise silhouettes of the fort gates, swimming pool dynamics in 40°C heat, and candlelight fine-dining setups. Warm HSL color grading highlighted natural sandstones and gold palace trims, driving corporate interest.",
@@ -107,7 +107,7 @@ export default function Portfolio() {
         { label: "Turnaround", value: "3 Weeks" }
       ],
       deliverables: ["Fort Palace Stills Library", "6 Corporate Vertical Reels", "5-Min Luxury Master Promo", "Full Drone Master Shots"],
-      gallery: ["/images/heritage_resort_india.png", "/images/about_hero_bg.png", "/images/hotel_hero_bg.png"]
+      gallery: ["/images/packages_adventure.png", "/images/packages_hero.png", "/images/packages_memorable_bg.png"]
     },
     {
       id: 6,
@@ -115,7 +115,7 @@ export default function Portfolio() {
       category: "maternity",
       categoryLabel: "Fine-Art Silhouette",
       location: "Studio Session, India",
-      image: "/images/maternity_silhouette_dark.png",
+      image: "/images/packages_lifestyle.png",
       videoUrl: "https://assets.mixkit.co/videos/preview/mixkit-pregnant-woman-walking-slowly-in-nature-44651-large.mp4",
       brief: "A high-concept silhouette shoot utilizing golden hour lighting transitions in an indoor/outdoor courtyard.",
       solution: "We blended classical Indian architecture shadows with golden light flares to create editorial, painterly silhouettes that express deep motherhood grace without conventional studio staging.",
@@ -126,7 +126,7 @@ export default function Portfolio() {
         { label: "Custom Framing", value: "5 Wood Frames" }
       ],
       deliverables: ["2-Hour Courtyard Session", "35 Painterly Silhouettes", "5 Museum Framed Works", "Custom Digital Archive Link"],
-      gallery: ["/images/maternity_silhouette_dark.png", "/images/maternity_silhouette_light.png", "/images/maternity_hero_bg.png"]
+      gallery: ["/images/packages_lifestyle.png", "/images/packages_intimate.png", "/images/packages_memorable_bg.png"]
     }
   ];
 
