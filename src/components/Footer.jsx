@@ -27,8 +27,8 @@ export default function Footer() {
           
           {/* Logo & Description */}
           <div>
-            <h3 className="logo" style={{ marginBottom: '1.5rem', fontSize: '1.8rem' }}>
-              THEOMEDIA<span>.</span>
+            <h3 className="logo" style={{ marginBottom: '1.5rem', fontSize: '1.8rem', fontFamily: 'var(--font-editorial)', fontWeight: 300, letterSpacing: '0.1em', textTransform: 'uppercase' }}>
+              THEO.MEDIA HOUSE
             </h3>
             <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem', lineHeight: '1.7', marginBottom: '1.5rem', fontWeight: 300 }}>
               Cinematic films and editorial photography capturing your once-in-a-lifetime moments. Based in Ireland and India, working worldwide.

@@ -252,28 +252,43 @@ export default function Portfolio() {
   }, [selectedItem]);
 
   return (
-    <div style={{ backgroundColor: 'var(--bg-dark)', color: 'var(--text-light)', minHeight: '100vh', paddingTop: '140px', paddingBottom: '6rem' }}>
+    <div style={{ backgroundColor: '#000', color: '#fff', minHeight: '100vh', paddingTop: '140px', paddingBottom: '8rem' }}>
       <div className="container">
         
         {/* Page Title Header */}
-        <div className="text-center" style={{ marginBottom: '4rem' }}>
-          <span className="section-tagline">Visual Archive</span>
-          <h1 style={{ 
-            fontSize: 'clamp(2.5rem, 5vw, 4.5rem)', 
-            fontWeight: 400, 
-            lineHeight: 1.2, 
-            marginBottom: '1.5rem',
-            fontFamily: 'var(--font-headline)'
-          }}>
+        <div className="text-center" style={{ marginBottom: '5rem' }}>
+          <span 
+            style={{ 
+              fontSize: '0.75rem', 
+              textTransform: 'uppercase', 
+              letterSpacing: '0.3em', 
+              color: 'var(--accent-gold)', 
+              display: 'block', 
+              marginBottom: '1rem' 
+            }}
+          >
+            Visual Archive
+          </span>
+          <h1 
+            className="packages-editorial-font"
+            style={{ 
+              fontSize: 'clamp(2.8rem, 5vw, 4.8rem)', 
+              fontWeight: 300, 
+              lineHeight: 1.2, 
+              marginBottom: '1.8rem',
+              textTransform: 'uppercase',
+              letterSpacing: '0.05em'
+            }}
+          >
             Selected Works
           </h1>
           <p style={{ 
-            fontSize: '1.1rem', 
+            fontSize: '0.92rem', 
             maxWidth: '650px', 
             margin: '0 auto', 
-            color: 'var(--text-muted)',
+            color: '#a0a0a0',
             fontWeight: 300,
-            lineHeight: '1.7'
+            lineHeight: '1.8'
           }}>
             Explore our curated creations across cinematic wedding films, editorial maternity silhouettes, and luxury hospitality campaigns in Ireland and India. Click any item to explore its narrative case study.
           </p>
@@ -285,25 +300,25 @@ export default function Portfolio() {
           justifyContent: 'center', 
           gap: '1rem', 
           flexWrap: 'wrap', 
-          marginBottom: '4rem',
+          marginBottom: '5rem',
           borderBottom: '1px solid rgba(255,255,255,0.06)',
-          paddingBottom: '2rem'
+          paddingBottom: '2.5rem'
         }}>
           {['all', 'weddings', 'maternity', 'hotels'].map((cat) => (
             <button
               key={cat}
               onClick={() => setFilter(cat)}
               style={{
-                padding: '0.8rem 1.8rem',
-                borderRadius: '30px',
-                fontSize: '0.8rem',
+                padding: '0.6rem 1.6rem',
+                borderRadius: '0px',
+                fontSize: '0.72rem',
                 textTransform: 'uppercase',
                 letterSpacing: '0.15em',
                 fontWeight: 500,
                 border: '1px solid',
-                borderColor: filter === cat ? 'var(--accent-gold)' : 'rgba(255,255,255,0.1)',
-                backgroundColor: filter === cat ? 'var(--accent-gold)' : 'transparent',
-                color: filter === cat ? 'var(--bg-white)' : 'var(--text-muted)',
+                borderColor: filter === cat ? '#c4b097' : 'rgba(255,255,255,0.15)',
+                backgroundColor: filter === cat ? '#c4b097' : 'transparent',
+                color: filter === cat ? '#121212' : '#a0a0a0',
                 transition: 'var(--transition-smooth)'
               }}
             >
@@ -322,7 +337,8 @@ export default function Portfolio() {
               onMouseLeave={handleMouseLeave}
               onClick={() => openModal(item)}
               style={{
-                background: 'var(--bg-card-dark)',
+                background: '#0b0b0b',
+                border: '1px solid rgba(255, 255, 255, 0.03)',
                 position: 'relative',
                 overflow: 'hidden',
                 transformStyle: 'preserve-3d'
@@ -334,10 +350,10 @@ export default function Portfolio() {
                 loading="lazy"
               />
 
-              <div className="portfolio-overlay" style={{ transformStyle: 'preserve-3d' }}>
-                <span className="portfolio-category">{item.categoryLabel}</span>
-                <h3 className="portfolio-title">{item.title}</h3>
-                <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginTop: '0.3rem' }}>{item.location}</span>
+              <div className="portfolio-overlay" style={{ transformStyle: 'preserve-3d', background: 'linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.3) 60%, transparent 100%)' }}>
+                <span className="portfolio-category" style={{ color: 'var(--accent-gold)', letterSpacing: '0.15em' }}>{item.categoryLabel}</span>
+                <h3 className="portfolio-title" style={{ fontFamily: 'var(--font-editorial)', fontSize: '1.4rem', textTransform: 'uppercase', fontWeight: 300, letterSpacing: '0.05em' }}>{item.title}</h3>
+                <span style={{ fontSize: '0.72rem', color: '#a0a0a0', marginTop: '0.2rem', textTransform: 'uppercase', letterSpacing: '0.08em' }}>{item.location}</span>
               </div>
             </div>
           ))}
@@ -349,7 +365,7 @@ export default function Portfolio() {
             <div className="case-study-container" onClick={(e) => e.stopPropagation()}>
               
               <button className="case-study-close" onClick={() => setSelectedItem(null)} aria-label="Close Case Study">
-                <X size={24} />
+                <X size={20} />
               </button>
 
               <div className="case-study-grid">
@@ -374,10 +390,10 @@ export default function Portfolio() {
                         </video>
                         <div className="video-controls">
                           <button onClick={togglePlay} className="video-ctrl-btn" aria-label={isPlaying ? 'Pause' : 'Play'}>
-                            {isPlaying ? <Pause size={16} /> : <Play size={16} />}
+                            {isPlaying ? <Pause size={14} /> : <Play size={14} />}
                           </button>
                           <button onClick={toggleMute} className="video-ctrl-btn" aria-label={isMuted ? 'Unmute' : 'Mute'}>
-                            {isMuted ? <VolumeX size={16} /> : <Volume2 size={16} />}
+                            {isMuted ? <VolumeX size={14} /> : <Volume2 size={14} />}
                           </button>
                         </div>
                       </div>
@@ -409,26 +425,26 @@ export default function Portfolio() {
                 <div className="case-study-details-col">
                   
                   <div className="case-badge-container">
-                    <span className="case-badge-gold">{selectedItem.categoryLabel}</span>
-                    <span className="case-badge-outline">{selectedItem.location}</span>
+                    <span className="case-badge-gold" style={{ background: 'var(--accent-gold)', borderRadius: '0px' }}>{selectedItem.categoryLabel}</span>
+                    <span className="case-badge-outline" style={{ borderRadius: '0px', borderColor: 'rgba(255,255,255,0.15)' }}>{selectedItem.location}</span>
                   </div>
 
-                  <h2 className="case-heading">{selectedItem.title}</h2>
+                  <h2 className="case-heading packages-editorial-font" style={{ textTransform: 'uppercase', fontWeight: 300 }}>{selectedItem.title}</h2>
                   
                   <div className="case-divider" />
 
                   <div className="case-section">
-                    <h4 className="case-section-lbl">The Creative Brief</h4>
+                    <h4 className="case-section-lbl" style={{ color: 'var(--accent-gold)' }}>The Creative Brief</h4>
                     <p className="case-section-desc">{selectedItem.brief}</p>
                   </div>
 
                   <div className="case-section">
-                    <h4 className="case-section-lbl">The Visual Solution</h4>
+                    <h4 className="case-section-lbl" style={{ color: 'var(--accent-gold)' }}>The Visual Solution</h4>
                     <p className="case-section-desc">{selectedItem.solution}</p>
                   </div>
 
                   <div className="case-section">
-                    <h4 className="case-section-lbl">Signature Deliverables</h4>
+                    <h4 className="case-section-lbl" style={{ color: 'var(--accent-gold)' }}>Signature Deliverables</h4>
                     <ul className="case-deliverables">
                       {selectedItem.deliverables.map((item, i) => (
                         <li key={i}>
@@ -444,15 +460,15 @@ export default function Portfolio() {
                   {/* Operational Metrics Panel */}
                   <div className="case-metrics">
                     {selectedItem.metrics.map((met, i) => (
-                      <div key={i} className="case-metric-box">
-                        <span className="case-metric-val">{met.value}</span>
+                      <div key={i} className="case-metric-box" style={{ background: 'rgba(255,255,255,0.01)', border: '1px solid rgba(255,255,255,0.03)', borderRadius: '0px' }}>
+                        <span className="case-metric-val" style={{ fontFamily: 'var(--font-editorial)', fontWeight: 300 }}>{met.value}</span>
                         <span className="case-metric-lbl">{met.label}</span>
                       </div>
                     ))}
                   </div>
 
                   <div style={{ marginTop: '2.5rem' }}>
-                    <Link to="/contact" className="btn-gold" style={{ width: '100%', textAlign: 'center', display: 'block' }}>
+                    <Link to="/contact" className="btn-gold" style={{ width: '100%', textAlign: 'center', display: 'block', letterSpacing: '0.12em' }}>
                       Enquire For Similar Project
                     </Link>
                   </div>
@@ -473,9 +489,9 @@ export default function Portfolio() {
             left: 0;
             right: 0;
             bottom: 0;
-            background-color: rgba(6, 6, 6, 0.94);
-            backdrop-filter: blur(14px);
-            -webkit-backdrop-filter: blur(14px);
+            background-color: rgba(4, 4, 4, 0.95);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
             z-index: 2000;
             display: flex;
             align-items: center;
@@ -487,26 +503,26 @@ export default function Portfolio() {
 
           .case-study-container {
             position: relative;
-            background-color: #121212;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 12px;
+            background-color: #0b0b0b;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 4px;
             width: 100%;
             max-width: 1100px;
             overflow: hidden;
-            box-shadow: 0 25px 60px rgba(0,0,0,0.6);
+            box-shadow: 0 30px 65px rgba(0,0,0,0.8);
             animation: containerSlideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
           }
 
           .case-study-close {
             position: absolute;
-            top: 1.5rem;
-            right: 1.5rem;
+            top: 1.2rem;
+            right: 1.2rem;
             z-index: 10;
-            width: 44px;
-            height: 44px;
+            width: 36px;
+            height: 36px;
             border-radius: 50%;
-            background-color: rgba(0,0,0,0.4);
-            border: 1px solid rgba(255,255,255,0.08);
+            background-color: rgba(0,0,0,0.5);
+            border: 1px solid rgba(255,255,255,0.06);
             color: var(--text-light);
             display: flex;
             align-items: center;
@@ -516,6 +532,7 @@ export default function Portfolio() {
 
           .case-study-close:hover {
             background-color: var(--accent-gold);
+            border-color: var(--accent-gold);
             color: var(--bg-white);
             transform: rotate(90deg);
           }
@@ -537,10 +554,10 @@ export default function Portfolio() {
 
           /* Media Column Styles */
           .case-study-media-col {
-            background-color: #0c0c0c;
+            background-color: #050505;
             display: flex;
             flex-direction: column;
-            border-right: 1px solid rgba(255, 255, 255, 0.06);
+            border-right: 1px solid rgba(255, 255, 255, 0.04);
           }
 
           .case-study-viewer {
@@ -583,11 +600,11 @@ export default function Portfolio() {
           }
 
           .video-ctrl-btn {
-            width: 34px;
-            height: 34px;
+            width: 32px;
+            height: 32px;
             border-radius: 50%;
             background-color: rgba(10, 10, 10, 0.6);
-            border: 1px solid rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.12);
             color: #fff;
             display: flex;
             align-items: center;
@@ -605,7 +622,7 @@ export default function Portfolio() {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 1px;
-            background-color: rgba(255, 255, 255, 0.06);
+            background-color: rgba(255, 255, 255, 0.04);
             margin-top: auto;
           }
 
@@ -614,7 +631,7 @@ export default function Portfolio() {
             aspect-ratio: 16 / 9;
             cursor: pointer;
             overflow: hidden;
-            opacity: 0.55;
+            opacity: 0.5;
             transition: var(--transition-smooth);
           }
 
@@ -652,7 +669,7 @@ export default function Portfolio() {
 
           /* Details Column Styles */
           .case-study-details-col {
-            padding: 3rem;
+            padding: 2.5rem;
             display: flex;
             flex-direction: column;
             overflow-y: auto;
@@ -679,9 +696,8 @@ export default function Portfolio() {
             font-size: 0.7rem;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 0.1em;
+            letter-spacing: 0.1rem;
             padding: 0.4rem 0.8rem;
-            border-radius: 4px;
           }
 
           .case-badge-outline {
@@ -690,14 +706,13 @@ export default function Portfolio() {
             font-size: 0.7rem;
             font-weight: 500;
             text-transform: uppercase;
-            letter-spacing: 0.1em;
+            letter-spacing: 0.1rem;
             padding: 0.4rem 0.8rem;
-            border-radius: 4px;
           }
 
           .case-heading {
             font-size: clamp(1.8rem, 3.5vw, 2.4rem);
-            font-family: var(--font-headline);
+            font-family: var(--font-editorial);
             margin-bottom: 1rem;
             color: var(--text-light);
           }
@@ -723,9 +738,9 @@ export default function Portfolio() {
           }
 
           .case-section-desc {
-            font-size: 0.92rem;
+            font-size: 0.88rem;
             line-height: 1.6;
-            color: var(--text-muted);
+            color: #a0a0a0;
             font-weight: 300;
           }
 
@@ -738,8 +753,8 @@ export default function Portfolio() {
           }
 
           .case-deliverables li {
-            font-size: 0.85rem;
-            color: var(--text-muted);
+            font-size: 0.82rem;
+            color: #a0a0a0;
             display: flex;
             gap: 0.5rem;
             align-items: flex-start;

@@ -77,28 +77,43 @@ export default function Contact() {
   };
 
   return (
-    <div style={{ paddingTop: '140px', paddingBottom: '6rem', backgroundColor: 'var(--bg-cream)', minHeight: '100vh' }}>
+    <div style={{ paddingTop: '140px', paddingBottom: '8rem', backgroundColor: '#000', color: '#fff', minHeight: '100vh' }}>
       <div className="container">
         
         {/* Title Header */}
         <div className="text-center" style={{ marginBottom: '5rem' }}>
-          <span className="section-tagline contact-fade-in">GET IN TOUCH</span>
-          <h1 className="contact-fade-in" style={{ 
-            fontSize: 'clamp(2.5rem, 5vw, 4.5rem)', 
-            fontWeight: 400, 
-            lineHeight: 1.2, 
-            marginBottom: '1.5rem',
-            fontFamily: 'var(--font-headline)'
-          }}>
+          <span 
+            style={{ 
+              fontSize: '0.75rem', 
+              textTransform: 'uppercase', 
+              letterSpacing: '0.3em', 
+              color: 'var(--accent-gold)', 
+              display: 'block', 
+              marginBottom: '1rem' 
+            }}
+          >
+            Get In Touch
+          </span>
+          <h1 
+            className="packages-editorial-font"
+            style={{ 
+              fontSize: 'clamp(2.8rem, 5vw, 4.8rem)', 
+              fontWeight: 300, 
+              lineHeight: 1.2, 
+              marginBottom: '1.8rem',
+              textTransform: 'uppercase',
+              letterSpacing: '0.05em'
+            }}
+          >
             Tell Us About Your Project<span>.</span>
           </h1>
-          <p className="contact-fade-in" style={{ 
-            fontSize: '1.1rem', 
+          <p style={{ 
+            fontSize: '0.92rem', 
             maxWidth: '600px', 
             margin: '0 auto', 
-            color: 'var(--text-sub)',
+            color: '#a0a0a0',
             fontWeight: 300,
-            lineHeight: '1.7'
+            lineHeight: '1.8'
           }}>
             Based in Ireland and India. Connect with us via standard proposal request, or instantly lock in a custom visual discovery session using our VIP Scheduler.
           </p>
@@ -111,54 +126,62 @@ export default function Contact() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }} className="contact-fade-in">
             
             {/* WhatsApp Highlight Box */}
-            <div style={{ backgroundColor: 'var(--bg-white)', padding: '2.5rem', borderRadius: 'var(--border-radius)', boxShadow: '0 10px 30px rgba(0,0,0,0.02)', border: '1px solid rgba(0,0,0,0.03)' }}>
-              <span style={{ fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--accent-gold)', display: 'block', marginBottom: '0.5rem', fontWeight: 600 }}>Fastest Response</span>
-              <h3 style={{ fontSize: '1.4rem', fontFamily: 'var(--font-headline)', marginBottom: '1rem' }}>WhatsApp Chat</h3>
-              <p style={{ color: 'var(--text-sub)', fontSize: '0.9rem', lineHeight: '1.6', marginBottom: '1.8rem' }}>
+            <div 
+              style={{ 
+                backgroundColor: '#0b0b0b', 
+                padding: '2.5rem', 
+                borderRadius: '4px', 
+                boxShadow: '0 15px 35px rgba(0,0,0,0.5)', 
+                border: '1px solid rgba(255,255,255,0.03)' 
+              }}
+            >
+              <span style={{ fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.15em', color: 'var(--accent-gold)', display: 'block', marginBottom: '0.5rem', fontWeight: 600 }}>Fastest Response</span>
+              <h3 className="packages-editorial-font" style={{ fontSize: '1.5rem', marginBottom: '1rem', letterSpacing: '0.05em', textTransform: 'uppercase', fontWeight: 300 }}>WhatsApp Chat</h3>
+              <p style={{ color: '#a0a0a0', fontSize: '0.82rem', lineHeight: '1.6', marginBottom: '1.8rem' }}>
                 Need immediate date checks or package answers? Connect with our visual producers directly on WhatsApp.
               </p>
               <a 
                 href="https://wa.me/353852258004" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="btn-gold" 
-                style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.8rem' }}
+                className="tall-card-btn" 
+                style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.8rem', width: '100%', maxWidth: 'none' }}
               >
                 <span>WhatsApp Now</span>
-                <ArrowRight size={16} />
+                <ArrowRight size={14} />
               </a>
             </div>
 
             {/* Direct Contact Cards */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
               
-              <div style={{ display: 'flex', alignItems: 'center', gap: '1.2rem', padding: '1.5rem', backgroundColor: 'var(--bg-white)', borderRadius: 'var(--border-radius)', border: '1px solid rgba(0,0,0,0.02)' }}>
-                <div style={{ width: '46px', height: '46px', borderRadius: '50%', backgroundColor: 'var(--bg-cream)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--accent-gold)', flexShrink: 0 }}>
-                  <Phone size={20} />
+              <div style={{ display: 'flex', alignItems: 'center', gap: '1.2rem', padding: '1.5rem', backgroundColor: '#0b0b0b', borderRadius: '4px', border: '1px solid rgba(255,255,255,0.03)' }}>
+                <div style={{ width: '42px', height: '42px', borderRadius: '50%', backgroundColor: 'rgba(201,168,76,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--accent-gold)', flexShrink: 0 }}>
+                  <Phone size={18} />
                 </div>
                 <div>
-                  <span style={{ fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.15em', color: 'var(--text-sub)', display: 'block' }}>Call Us</span>
-                  <a href="tel:+353852258004" style={{ fontSize: '1.05rem', color: 'var(--text-dark)', fontWeight: 500 }}>+353 85 225 8004</a>
+                  <span style={{ fontSize: '0.65rem', textTransform: 'uppercase', letterSpacing: '0.15em', color: '#a0a0a0', display: 'block' }}>Call Us</span>
+                  <a href="tel:+353852258004" style={{ fontSize: '0.95rem', color: '#fff', fontWeight: 500 }}>+353 85 225 8004</a>
                 </div>
               </div>
 
-              <div style={{ display: 'flex', alignItems: 'center', gap: '1.2rem', padding: '1.5rem', backgroundColor: 'var(--bg-white)', borderRadius: 'var(--border-radius)', border: '1px solid rgba(0,0,0,0.02)' }}>
-                <div style={{ width: '46px', height: '46px', borderRadius: '50%', backgroundColor: 'var(--bg-cream)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--accent-gold)', flexShrink: 0 }}>
-                  <Mail size={20} />
+              <div style={{ display: 'flex', alignItems: 'center', gap: '1.2rem', padding: '1.5rem', backgroundColor: '#0b0b0b', borderRadius: '4px', border: '1px solid rgba(255,255,255,0.03)' }}>
+                <div style={{ width: '42px', height: '42px', borderRadius: '50%', backgroundColor: 'rgba(201,168,76,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--accent-gold)', flexShrink: 0 }}>
+                  <Mail size={18} />
                 </div>
                 <div>
-                  <span style={{ fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.15em', color: 'var(--text-sub)', display: 'block' }}>Email Us</span>
-                  <a href="mailto:hello@theomedia.co.uk" style={{ fontSize: '1.05rem', color: 'var(--text-dark)', fontWeight: 500 }}>hello@theomedia.co.uk</a>
+                  <span style={{ fontSize: '0.65rem', textTransform: 'uppercase', letterSpacing: '0.15em', color: '#a0a0a0', display: 'block' }}>Email Us</span>
+                  <a href="mailto:hello@theomedia.co.uk" style={{ fontSize: '0.95rem', color: '#fff', fontWeight: 500 }}>hello@theomedia.co.uk</a>
                 </div>
               </div>
 
-              <div style={{ display: 'flex', alignItems: 'center', gap: '1.2rem', padding: '1.5rem', backgroundColor: 'var(--bg-white)', borderRadius: 'var(--border-radius)', border: '1px solid rgba(0,0,0,0.02)' }}>
-                <div style={{ width: '46px', height: '46px', borderRadius: '50%', backgroundColor: 'var(--bg-cream)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--accent-gold)', flexShrink: 0 }}>
-                  <MapPin size={20} />
+              <div style={{ display: 'flex', alignItems: 'center', gap: '1.2rem', padding: '1.5rem', backgroundColor: '#0b0b0b', borderRadius: '4px', border: '1px solid rgba(255,255,255,0.03)' }}>
+                <div style={{ width: '42px', height: '42px', borderRadius: '50%', backgroundColor: 'rgba(201,168,76,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--accent-gold)', flexShrink: 0 }}>
+                  <MapPin size={18} />
                 </div>
                 <div>
-                  <span style={{ fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.15em', color: 'var(--text-sub)', display: 'block' }}>Primary Regions</span>
-                  <span style={{ fontSize: '1.05rem', color: 'var(--text-dark)', fontWeight: 500 }}>Ireland & India (Worldwide coverage)</span>
+                  <span style={{ fontSize: '0.65rem', textTransform: 'uppercase', letterSpacing: '0.15em', color: '#a0a0a0', display: 'block' }}>Primary Regions</span>
+                  <span style={{ fontSize: '0.95rem', color: '#fff', fontWeight: 500 }}>Ireland & India (Worldwide coverage)</span>
                 </div>
               </div>
 
@@ -168,16 +191,16 @@ export default function Contact() {
           {/* Right Column: Interaction Hub */}
           <div className="contact-fade-in" style={{ width: '100%' }}>
             
-            {/* Elegant Tab Switcher */}
-            <div className="interactive-tabs">
+            {/* Tab Switcher */}
+            <div className="interactive-tabs-dark">
               <button 
-                className={`tab-btn ${activeTab === 'form' ? 'active' : ''}`}
+                className={`tab-btn-dark ${activeTab === 'form' ? 'active' : ''}`}
                 onClick={() => setActiveTab('form')}
               >
                 Proposal Request Form
               </button>
               <button 
-                className={`tab-btn ${activeTab === 'scheduler' ? 'active' : ''}`}
+                className={`tab-btn-dark ${activeTab === 'scheduler' ? 'active' : ''}`}
                 onClick={() => { setActiveTab('scheduler'); resetScheduler(); }}
               >
                 VIP Live Discovery Scheduler
@@ -187,16 +210,16 @@ export default function Contact() {
             {/* TAB 1: STANDARD PROPOSAL FORM */}
             {activeTab === 'form' && (
               submitted ? (
-                <div className="contact-card success-card">
-                  <CheckCircle2 size={64} style={{ color: 'var(--accent-gold)' }} />
-                  <h3 style={{ fontSize: '2rem', fontFamily: 'var(--font-headline)' }}>Outline Received</h3>
-                  <p style={{ color: 'var(--text-sub)', maxWidth: '400px', fontSize: '1rem', lineHeight: '1.6' }}>
+                <div className="contact-card-dark success-card-dark">
+                  <CheckCircle2 size={56} style={{ color: 'var(--accent-gold)', marginBottom: '1.5rem' }} />
+                  <h3 className="packages-editorial-font" style={{ fontSize: '2rem', textTransform: 'uppercase', fontWeight: 300, letterSpacing: '0.05em' }}>Outline Received</h3>
+                  <p style={{ color: '#a0a0a0', maxWidth: '400px', fontSize: '0.88rem', lineHeight: '1.6', marginBottom: '2rem' }}>
                     We have successfully received your project outline. A production manager will review dates and email you a custom proposal within 24 hours.
                   </p>
-                  <button onClick={() => setSubmitted(false)} className="btn-outline-dark" style={{ marginTop: '1rem' }}>Send Another Enquiry</button>
+                  <button onClick={() => setSubmitted(false)} className="btn-outline-white" style={{ borderRadius: '0' }}>Send Another Enquiry</button>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="contact-form" style={{ backgroundColor: 'var(--bg-white)', border: '1px solid rgba(0,0,0,0.03)' }}>
+                <form onSubmit={handleSubmit} className="contact-form-dark">
                   <div className="form-grid">
                     
                     <div className="form-group">
@@ -208,7 +231,7 @@ export default function Contact() {
                         value={formData.name} 
                         onChange={handleChange}
                         required 
-                        className="form-control" 
+                        className="form-control-dark" 
                         placeholder="e.g. Sarah Connor" 
                       />
                     </div>
@@ -222,7 +245,7 @@ export default function Contact() {
                         value={formData.email} 
                         onChange={handleChange}
                         required 
-                        className="form-control" 
+                        className="form-control-dark" 
                         placeholder="e.g. sarah@example.com" 
                       />
                     </div>
@@ -236,7 +259,7 @@ export default function Contact() {
                         value={formData.phone} 
                         onChange={handleChange}
                         required 
-                        className="form-control" 
+                        className="form-control-dark" 
                         placeholder="e.g. +353 85..." 
                       />
                     </div>
@@ -248,7 +271,7 @@ export default function Contact() {
                         name="service" 
                         value={formData.service} 
                         onChange={handleChange}
-                        className="form-control"
+                        className="form-control-dark"
                       >
                         <option value="weddings">Cinematic Wedding Film + Photo</option>
                         <option value="maternity">Editorial Maternity Silhouette</option>
@@ -265,7 +288,7 @@ export default function Contact() {
                         value={formData.details} 
                         onChange={handleChange}
                         required 
-                        className="form-control" 
+                        className="form-control-dark" 
                         placeholder="Please detail your venue, dates, specific creative goals..." 
                       />
                     </div>
@@ -277,7 +300,7 @@ export default function Contact() {
                         name="referrer" 
                         value={formData.referrer} 
                         onChange={handleChange}
-                        className="form-control"
+                        className="form-control-dark"
                       >
                         <option value="search">Google / Search Engine</option>
                         <option value="instagram">Instagram / Social Media</option>
@@ -288,9 +311,9 @@ export default function Contact() {
 
                   </div>
 
-                  <button type="submit" className="btn-gold" style={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.8rem' }}>
+                  <button type="submit" className="tall-card-btn" style={{ width: '100%', maxWidth: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.8rem', padding: '0.9rem' }}>
                     <span>Submit Proposal Request</span>
-                    <ArrowRight size={16} />
+                    <ArrowRight size={14} />
                   </button>
                 </form>
               )
@@ -298,25 +321,25 @@ export default function Contact() {
 
             {/* TAB 2: VIP LUXURY SCHEDULER */}
             {activeTab === 'scheduler' && (
-              <div className="contact-card scheduler-card" style={{ backgroundColor: 'var(--bg-white)', border: '1px solid rgba(0,0,0,0.03)' }}>
+              <div className="contact-card-dark">
                 
                 {schedulerStep === 1 && (
                   <div>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', marginBottom: '1.5rem' }}>
-                      <Calendar className="text-gold" size={22} />
-                      <h3 style={{ fontSize: '1.3rem', fontFamily: 'var(--font-headline)' }}>1. Select Date & Slot</h3>
+                      <Calendar className="text-gold" size={20} />
+                      <h3 className="packages-editorial-font" style={{ fontSize: '1.4rem', textTransform: 'uppercase', fontWeight: 300 }}>1. Select Date & Slot</h3>
                     </div>
                     
-                    <p style={{ fontSize: '0.88rem', color: 'var(--text-sub)', marginBottom: '2rem', lineHeight: '1.6' }}>
+                    <p style={{ fontSize: '0.82rem', color: '#a0a0a0', marginBottom: '2rem', lineHeight: '1.6' }}>
                       Lock in a live video session with our director. Choose a preferred date next week and select an available time. All bookings include a custom visual brief review.
                     </p>
 
                     {/* Date Selector Row */}
-                    <div className="scheduler-days-row">
+                    <div className="scheduler-days-row-dark">
                       {nextFiveDays.map((item, idx) => (
                         <div 
                           key={idx} 
-                          className={`scheduler-day-box ${selectedDay === idx ? 'active' : ''}`}
+                          className={`scheduler-day-box-dark ${selectedDay === idx ? 'active' : ''}`}
                           onClick={() => { setSelectedDay(idx); setSelectedTime(null); }}
                         >
                           <span className="day-name">{item.dayName}</span>
@@ -326,17 +349,17 @@ export default function Contact() {
                       ))}
                     </div>
 
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', margin: '2rem 0 1rem 0' }}>
-                      <Clock className="text-gold" size={18} />
-                      <span style={{ fontSize: '0.75rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em' }}>Available Times</span>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', margin: '2.5rem 0 1.2rem 0' }}>
+                      <Clock className="text-gold" size={16} />
+                      <span style={{ fontSize: '0.7rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.15em', color: '#fff' }}>Available Times</span>
                     </div>
 
                     {/* Slots Grid */}
-                    <div className="scheduler-slots-grid">
+                    <div className="scheduler-slots-grid-dark">
                       {availableSlots.map((slot, idx) => (
                         <button
                           key={idx}
-                          className={`scheduler-slot-btn ${selectedTime === slot ? 'active' : ''}`}
+                          className={`scheduler-slot-btn-dark ${selectedTime === slot ? 'active' : ''}`}
                           onClick={() => setSelectedTime(slot)}
                         >
                           {slot}
@@ -345,8 +368,8 @@ export default function Contact() {
                     </div>
 
                     <button
-                      className="btn-gold"
-                      style={{ width: '100%', marginTop: '2.5rem', opacity: selectedTime ? 1 : 0.5, cursor: selectedTime ? 'pointer' : 'not-allowed' }}
+                      className="tall-card-btn"
+                      style={{ width: '100%', maxWidth: 'none', marginTop: '2.5rem', opacity: selectedTime ? 1 : 0.5, cursor: selectedTime ? 'pointer' : 'not-allowed', padding: '0.9rem' }}
                       disabled={!selectedTime}
                       onClick={() => setSchedulerStep(2)}
                     >
@@ -358,11 +381,11 @@ export default function Contact() {
                 {schedulerStep === 2 && (
                   <form onSubmit={handleSchedulerSubmit}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', marginBottom: '1.5rem' }}>
-                      <Sparkles className="text-gold" size={22} />
-                      <h3 style={{ fontSize: '1.3rem', fontFamily: 'var(--font-headline)' }}>2. Live Session Details</h3>
+                      <Sparkles className="text-gold" size={20} />
+                      <h3 className="packages-editorial-font" style={{ fontSize: '1.4rem', textTransform: 'uppercase', fontWeight: 300 }}>2. Live Session Details</h3>
                     </div>
 
-                    <div className="selected-slot-banner">
+                    <div className="selected-slot-banner-dark">
                       <span>Selected Session:</span>
                       <strong>{nextFiveDays[selectedDay].dayName}, {nextFiveDays[selectedDay].month} {nextFiveDays[selectedDay].date} at {selectedTime}</strong>
                     </div>
@@ -376,7 +399,7 @@ export default function Contact() {
                         value={schedulerData.name} 
                         onChange={handleSchedulerChange}
                         required 
-                        className="form-control" 
+                        className="form-control-dark" 
                         placeholder="e.g. David Beckham" 
                       />
                     </div>
@@ -390,7 +413,7 @@ export default function Contact() {
                         value={schedulerData.email} 
                         onChange={handleSchedulerChange}
                         required 
-                        className="form-control" 
+                        className="form-control-dark" 
                         placeholder="e.g. david@example.com" 
                       />
                     </div>
@@ -402,16 +425,16 @@ export default function Contact() {
                         name="notes" 
                         value={schedulerData.notes} 
                         onChange={handleSchedulerChange}
-                        className="form-control" 
+                        className="form-control-dark" 
                         placeholder="Share a brief overview of your venue, dates, or booking inquiries..." 
                       />
                     </div>
 
                     <div style={{ display: 'flex', gap: '1rem' }}>
-                      <button type="button" className="btn-outline-dark" style={{ flexGrow: 1 }} onClick={() => setSchedulerStep(1)}>
+                      <button type="button" className="btn-outline-white" style={{ flexGrow: 1, borderRadius: '0' }} onClick={() => setSchedulerStep(1)}>
                         Back
                       </button>
-                      <button type="submit" className="btn-gold" style={{ flexGrow: 2 }}>
+                      <button type="submit" className="tall-card-btn" style={{ flexGrow: 2, maxWidth: 'none', padding: '0.9rem' }}>
                         Confirm VIP Booking
                       </button>
                     </div>
@@ -419,20 +442,20 @@ export default function Contact() {
                 )}
 
                 {schedulerStep === 3 && (
-                  <div className="success-container" style={{ textAlign: 'center', padding: '2rem 0' }}>
-                    <CheckCircle2 size={64} style={{ color: 'var(--accent-gold)', marginBottom: '1.5rem' }} />
-                    <h3 style={{ fontSize: '2rem', fontFamily: 'var(--font-headline)', marginBottom: '1rem' }}>Session Locked!</h3>
+                  <div className="success-container-dark" style={{ textAlign: 'center', padding: '2rem 0' }}>
+                    <CheckCircle2 size={56} style={{ color: 'var(--accent-gold)', marginBottom: '1.5rem' }} />
+                    <h3 className="packages-editorial-font" style={{ fontSize: '2rem', textTransform: 'uppercase', fontWeight: 300, letterSpacing: '0.05em', marginBottom: '1rem' }}>Session Locked!</h3>
                     
-                    <div className="booked-receipt">
-                      <span className="receipt-lbl">VIP Video Blueprinting Session</span>
-                      <strong className="receipt-val">{nextFiveDays[selectedDay].dayName}, {nextFiveDays[selectedDay].month} {nextFiveDays[selectedDay].date}</strong>
-                      <span className="receipt-time">{selectedTime}</span>
+                    <div className="booked-receipt-dark">
+                      <span className="receipt-lbl-dark">VIP Video Blueprinting Session</span>
+                      <strong className="receipt-val-dark packages-editorial-font">{nextFiveDays[selectedDay].dayName}, {nextFiveDays[selectedDay].month} {nextFiveDays[selectedDay].date}</strong>
+                      <span className="receipt-time-dark">{selectedTime}</span>
                     </div>
 
-                    <p style={{ color: 'var(--text-sub)', maxWidth: '400px', margin: '1.5rem auto 2.5rem auto', fontSize: '0.92rem', lineHeight: '1.6' }}>
+                    <p style={{ color: '#a0a0a0', maxWidth: '400px', margin: '1.5rem auto 2.5rem auto', fontSize: '0.85rem', lineHeight: '1.6' }}>
                       A secure Google Meet invitation, session calendar event, and brief outline outline have been dispatched to <strong>{schedulerData.email}</strong>. Let's create something extraordinary.
                     </p>
-                    <button onClick={resetScheduler} className="btn-gold">Book Another Slot</button>
+                    <button onClick={resetScheduler} className="tall-card-btn" style={{ maxWidth: 'none', padding: '0.8rem 2rem' }}>Book Another Slot</button>
                   </div>
                 )}
 
@@ -445,104 +468,142 @@ export default function Contact() {
 
       </div>
 
-      {/* Styled calendar overlays local to page */}
+      {/* Styled calendar and form overrides local to page */}
       <style>{`
-        .interactive-tabs {
+        .interactive-tabs-dark {
           display: flex;
-          border-bottom: 2px solid rgba(0, 0, 0, 0.05);
-          margin-bottom: 2rem;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+          margin-bottom: 2.5rem;
           gap: 1rem;
         }
 
-        .tab-btn {
-          padding: 1rem 1.5rem;
+        .tab-btn-dark {
+          padding: 1rem 0;
           font-weight: 500;
-          font-size: 0.88rem;
-          color: var(--text-sub);
+          font-size: 0.75rem;
+          color: #a0a0a0;
           position: relative;
           text-transform: uppercase;
-          letter-spacing: 0.05em;
+          letter-spacing: 0.15em;
           transition: var(--transition-smooth);
+          cursor: pointer;
         }
 
-        .tab-btn.active {
+        .tab-btn-dark.active {
           color: var(--accent-gold);
-          font-weight: 600;
         }
 
-        .tab-btn::after {
+        .tab-btn-dark::after {
           content: '';
           position: absolute;
-          bottom: -2px;
+          bottom: -1px;
           left: 0;
           right: 0;
-          height: 2px;
+          height: 1px;
           background-color: var(--accent-gold);
           transform: scaleX(0);
           transition: var(--transition-smooth);
         }
 
-        .tab-btn.active::after {
+        .tab-btn-dark.active::after {
           transform: scaleX(1);
         }
 
-        .contact-card {
-          background-color: var(--bg-white);
-          padding: 4rem 3.5rem;
-          border-radius: var(--border-radius);
-          box-shadow: 0 10px 40px rgba(0, 0, 0, 0.02);
+        .contact-card-dark {
+          background-color: #0b0b0b;
+          border: 1px solid rgba(255, 255, 255, 0.05);
+          padding: 3.5rem 3rem;
+          border-radius: 4px;
+          box-shadow: 0 20px 45px rgba(0, 0, 0, 0.5);
           width: 100%;
         }
 
         @media (max-width: 768px) {
-          .contact-card {
+          .contact-card-dark {
             padding: 2.5rem 1.8rem;
           }
         }
 
-        .success-card {
+        .contact-form-dark {
+          background-color: #0b0b0b;
+          border: 1px solid rgba(255, 255, 255, 0.05);
+          padding: 3.5rem 3rem;
+          border-radius: 4px;
+          box-shadow: 0 20px 45px rgba(0, 0, 0, 0.5);
+          width: 100%;
+        }
+
+        @media (max-width: 768px) {
+          .contact-form-dark {
+            padding: 2.5rem 1.8rem;
+          }
+        }
+
+        .success-card-dark {
           text-align: center;
           display: flex;
           flex-direction: column;
           align-items: center;
           justify-content: center;
-          gap: 1.5rem;
+        }
+
+        .form-control-dark {
+          border: 1px solid rgba(255, 255, 255, 0.12);
+          background-color: rgba(255, 255, 255, 0.01);
+          padding: 0.9rem 1.2rem;
+          border-radius: 0px;
+          font-size: 0.88rem;
+          color: #fff;
+          transition: var(--transition-smooth);
+          outline: none;
+          width: 100%;
+        }
+
+        .form-control-dark:focus {
+          border-color: var(--accent-gold);
+          background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        select.form-control-dark option {
+          background-color: #0b0b0b;
+          color: #fff;
         }
 
         /* Scheduler Calendar Styles */
-        .scheduler-days-row {
+        .scheduler-days-row-dark {
           display: grid;
           grid-template-columns: repeat(5, 1fr);
           gap: 0.6rem;
           margin-bottom: 1.5rem;
         }
 
-        .scheduler-day-box {
-          border: 1px solid rgba(0, 0, 0, 0.06);
-          background-color: rgba(0, 0, 0, 0.01);
-          border-radius: 6px;
+        .scheduler-day-box-dark {
+          border: 1px solid rgba(255, 255, 255, 0.12);
+          background-color: rgba(255, 255, 255, 0.01);
+          border-radius: 0px;
           padding: 1rem 0.5rem;
           display: flex;
           flex-direction: column;
           align-items: center;
           cursor: pointer;
           transition: var(--transition-smooth);
+          color: #a0a0a0;
         }
 
-        .scheduler-day-box:hover {
+        .scheduler-day-box-dark:hover {
           border-color: var(--accent-gold);
-          background-color: rgba(201, 168, 76, 0.02);
+          color: var(--accent-gold);
         }
 
-        .scheduler-day-box.active {
-          border-color: var(--accent-gold);
-          background-color: var(--accent-gold);
-          color: #fff;
-          box-shadow: 0 8px 20px rgba(201, 168, 76, 0.2);
+        .scheduler-day-box-dark.active {
+          border-color: #c4b097;
+          background-color: #c4b097;
+          color: #121212;
+          box-shadow: 0 8px 20px rgba(196, 176, 151, 0.2);
         }
 
         .day-name {
-          font-size: 0.7rem;
+          font-size: 0.65rem;
           text-transform: uppercase;
           letter-spacing: 0.05em;
           opacity: 0.7;
@@ -550,72 +611,72 @@ export default function Contact() {
         }
 
         .day-date {
-          font-size: 1.4rem;
+          font-size: 1.3rem;
           font-weight: bold;
           font-family: var(--font-headline);
         }
 
         .day-month {
-          font-size: 0.65rem;
+          font-size: 0.6rem;
           text-transform: uppercase;
           opacity: 0.7;
           letter-spacing: 0.05em;
         }
 
-        .scheduler-slots-grid {
+        .scheduler-slots-grid-dark {
           display: grid;
           grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
           gap: 0.8rem;
         }
 
-        .scheduler-slot-btn {
-          border: 1px solid rgba(0, 0, 0, 0.06);
-          background-color: #fff;
-          padding: 1rem;
-          border-radius: 6px;
-          font-size: 0.82rem;
+        .scheduler-slot-btn-dark {
+          border: 1px solid rgba(255, 255, 255, 0.12);
+          background-color: rgba(255, 255, 255, 0.01);
+          padding: 0.9rem;
+          border-radius: 0px;
+          font-size: 0.78rem;
           font-weight: 500;
-          color: var(--text-dark);
+          color: #a0a0a0;
           text-align: center;
           transition: var(--transition-smooth);
+          cursor: pointer;
         }
 
-        .scheduler-slot-btn:hover {
+        .scheduler-slot-btn-dark:hover {
           border-color: var(--accent-gold);
           color: var(--accent-gold);
-          background-color: rgba(201, 168, 76, 0.02);
         }
 
-        .scheduler-slot-btn.active {
-          background-color: var(--accent-gold);
-          color: #fff;
-          border-color: var(--accent-gold);
-          box-shadow: 0 8px 16px rgba(201, 168, 76, 0.15);
+        .scheduler-slot-btn-dark.active {
+          background-color: #c4b097;
+          color: #121212;
+          border-color: #c4b097;
+          box-shadow: 0 8px 16px rgba(196, 176, 151, 0.2);
         }
 
-        .selected-slot-banner {
+        .selected-slot-banner-dark {
           background-color: rgba(201, 168, 76, 0.04);
           border: 1px solid rgba(201, 168, 76, 0.15);
-          border-radius: 6px;
+          border-radius: 0px;
           padding: 1.2rem;
           display: flex;
           flex-direction: column;
           gap: 0.3rem;
           margin-bottom: 2rem;
-          font-size: 0.9rem;
+          font-size: 0.88rem;
         }
 
-        .selected-slot-banner span {
-          font-size: 0.75rem;
+        .selected-slot-banner-dark span {
+          font-size: 0.7rem;
           text-transform: uppercase;
           letter-spacing: 0.05em;
           color: var(--accent-gold);
         }
 
-        .booked-receipt {
-          background-color: rgba(0, 0, 0, 0.02);
+        .booked-receipt-dark {
+          background-color: rgba(255, 255, 255, 0.01);
           border: 1px dashed rgba(201, 168, 76, 0.4);
-          border-radius: 8px;
+          border-radius: 0px;
           padding: 1.8rem;
           max-width: 320px;
           margin: 0 auto;
@@ -624,21 +685,23 @@ export default function Contact() {
           gap: 0.4rem;
         }
 
-        .receipt-lbl {
-          font-size: 0.7rem;
+        .receipt-lbl-dark {
+          font-size: 0.65rem;
           text-transform: uppercase;
           letter-spacing: 0.1em;
-          color: var(--text-sub);
+          color: #a0a0a0;
         }
 
-        .receipt-val {
-          font-size: 1.4rem;
-          font-family: var(--font-headline);
-          color: var(--text-dark);
+        .receipt-val-dark {
+          font-size: 1.5rem;
+          color: #fff;
+          font-weight: 300;
+          text-transform: uppercase;
+          letter-spacing: 0.05em;
         }
 
-        .receipt-time {
-          font-size: 0.9rem;
+        .receipt-time-dark {
+          font-size: 0.85rem;
           font-weight: 500;
           color: var(--accent-gold);
         }
